@@ -1,3 +1,19 @@
+
+//html duodam taga style - gali buti tuscias
+//cia aprasom funkcija kuri keis spalvas random
+
+function updateColors() {
+    const styleDOM = document.querySelector('head > style');
+    const randomColor = () => Math.floor(Math.random() * 256);
+    const r = randomColor();
+    const g = randomColor();
+    const b = randomColor();
+    const CSS = `:root {
+                        --color: rgb(${r}, ${g}, ${b});
+                    }`;
+    styleDOM.innerHTML = CSS;
+}
+
 //html piesimas
 function virykle(size) {
     const DOM = document.getElementById('virykle');
@@ -56,6 +72,7 @@ function virykle(size) {
         allJungikliaiDOM[i].addEventListener('click', () => {
             allJungikliaiDOM[i].classList.toggle('ijungta');
             allSkylesDOM[i].classList.toggle('ijungta');
+            updateColors();
         })
     }
 }

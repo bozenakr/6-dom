@@ -39,7 +39,7 @@ body {
 }
 
 .virykle > .top > .skyle.ijungta {
-    background-color: red;
+    background-color: var(--color);
 }
 
 .virykle > .bottom {
