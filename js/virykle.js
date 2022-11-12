@@ -28,7 +28,36 @@ function virykle(size) {
     //10 tarpas tarp skyliu
     //n = rowsize-1 - kiek tarpu == vienas maziau nei skyliu kiekis
     //darom math sqr is skyliu kiekio tada math ceil - kad apvalintu i virsu
-}
 
+
+
+    //kvieciam tuos elementus kuriuos sukurem - ju nera html - skyles ir jungikliai
+    const allSkylesDOM = DOM.querySelectorAll('.skyle');
+    const allJungikliaiDOM = DOM.querySelectorAll('.jungiklis');
+    // console.log(allSkylesDOM); tikrinam ar randa ka sukurem
+    // console.log(allJungikliaiDOM); tikrinam ar randa ka sukurem
+
+    //negalim eventListener pridet prie viso masyvo, kvieciam elementa masyvo ir tada pridedam - 
+
+    // allJungikliaiDOM[0].addEventListener('click', () => {
+    //     console.log('jungiam...');
+    // })
+    // allJungikliaiDOM[1].addEventListener('click', () => {
+    //     console.log('jungiam...');
+    // })
+    // allJungikliaiDOM[2].addEventListener('click', () => {
+    //     console.log('jungiam...');
+    // })
+
+
+    //vietoj to, kad kviesti kiekviena elementa sukuriam cikla
+    //ciklas eina nurpdyta kieki kartu per individualius jungiklius ir kai and jungiklio 'click' prideda jam klase 'ijungta'
+    for (let i = 0; i < size; ++i) {
+        allJungikliaiDOM[i].addEventListener('click', () => {
+            allJungikliaiDOM[i].classList.toggle('ijungta');
+            allSkylesDOM[i].classList.toggle('ijungta');
+        })
+    }
+}
 
 virykle(4);
