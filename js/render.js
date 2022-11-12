@@ -31,14 +31,19 @@ function formatWord(str) {
 
 let HTML = '';
 
+
+//konstruojam html rezultata - galim norima elementa ideti i span ir jau cia js-e pridedam jam class - siuo atveju raudonos raides 'sauce'
 for (const kebabas of kebabai) {
     HTML += `<li>${formatWord(kebabas.size)} su ${kebabas.main} ir <span class="red">${kebabas.sauce}</span></li>`;
 }
 
 const kebabaiDOM = document.querySelector('#kebabai > ul');
 
+//gimdymas rezultato
 kebabaiDOM.innerHTML = HTML;
 
+
+//kreipiames i teva ne i visa document todel galim pasirinkt konkreciai ==li==
 const liDOM = kebabaiDOM.querySelectorAll('li');
 console.log(liDOM);
 
